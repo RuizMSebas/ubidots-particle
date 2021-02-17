@@ -1,5 +1,5 @@
 // This example retrieves last value of a variable from the Ubidots API
-// using HTTP protocol.
+// using TCP protocol.
 
 /****************************************
  * Include Libraries
@@ -15,9 +15,6 @@
 #define UBIDOTS_TOKEN ""  // Put here your Ubidots TOKEN
 #endif
 
-// Uncomment this line to print debug messages
-#define UBIDOTS_LOGGING TRUE
-
 Ubidots ubidots(UBIDOTS_TOKEN, UBI_TCP);
 
 /****************************************
@@ -32,7 +29,8 @@ Ubidots ubidots(UBIDOTS_TOKEN, UBI_TCP);
 
 void setup() {
   Serial.begin(115200);
-  ubidots.setDebug(true);
+  // Uncomment this line to print debug messages
+  //ubidots.setDebug(true);
 }
 
 void loop() {
